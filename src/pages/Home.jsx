@@ -173,7 +173,7 @@ export default function Home() {
           </div>
 
           {/* Tesal — real photograph */}
-          <article className="sub">
+          <article id="tesal" className="sub">
             <figure className="sub__visual sub__visual--photo">
               <img
                 src={tesalImg}
@@ -218,7 +218,7 @@ export default function Home() {
           </article>
 
           {/* GoatLife — data card */}
-          <article className="sub">
+          <article id="goatlife" className="sub">
             <div
               className="sub__visual sub__visual--stats"
               aria-labelledby="goatlife-stats-title"
@@ -291,7 +291,7 @@ export default function Home() {
           </article>
 
           {/* AnalAdvice — pull-quote */}
-          <article className="sub">
+          <article id="analadvice" className="sub">
             <div className="sub__visual sub__visual--quote">
               <div className="quote-card">
                 <div className="quote-card__hd">

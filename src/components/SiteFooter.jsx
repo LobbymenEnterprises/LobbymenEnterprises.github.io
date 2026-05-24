@@ -27,17 +27,17 @@ export default function SiteFooter() {
             <h5>Subsidiaries</h5>
             <ul>
               <li>
-                <button type="button" className="linklike" onClick={() => goToSection('subsidiaries')}>
+                <button type="button" className="linklike" onClick={() => goToSection('tesal')}>
                   Tesal Electric Car Co.
                 </button>
               </li>
               <li>
-                <button type="button" className="linklike" onClick={() => goToSection('subsidiaries')}>
+                <button type="button" className="linklike" onClick={() => goToSection('goatlife')}>
                   GoatLife Guillotine Industries
                 </button>
               </li>
               <li>
-                <button type="button" className="linklike" onClick={() => goToSection('subsidiaries')}>
+                <button type="button" className="linklike" onClick={() => goToSection('analadvice')}>
                   AnalAdvice Health Group
                 </button>
               </li>
