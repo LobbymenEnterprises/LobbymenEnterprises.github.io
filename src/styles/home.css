@@ -605,8 +605,15 @@ a.press__item { cursor: pointer; }
   .hero__title { margin-bottom: 28px; }
   .hero__lede { font-size: 19px; margin-bottom: 32px; }
   .section { padding: 64px 0; }
-  .sub { padding: 44px 0; gap: 32px; }
-  .sub__visual { aspect-ratio: 16 / 11; }
+
+  /* Stack the subsidiary block: visual on top, copy below. Drop the
+     alternating-side flip — it has no meaning in single-column. The
+     visual gets full container width so the photograph, stat grid, and
+     pull-quote each have room to read instead of being squeezed into a
+     thumbnail beside the copy. */
+  .sub { grid-template-columns: 1fr; padding: 44px 0; gap: 28px; }
+  .sub:nth-child(even) { direction: ltr; }
+  .sub__visual { aspect-ratio: 16 / 10; }
   .stat-card__cell { padding: 16px 18px 14px; }
   .quote-card { padding: 24px 24px 18px; }
   .press__item { padding: 18px 0; grid-template-columns: 100px 1fr; gap: 16px; }
@@ -633,24 +640,25 @@ a.press__item { cursor: pointer; }
   .section__title { font-size: clamp(28px, 7.5vw, 38px); }
   .section__lede { font-size: 16px; }
 
-  .sub { padding: 36px 0; gap: 26px; }
-  .sub__visual { aspect-ratio: 4 / 3; }
+  .sub { padding: 36px 0; gap: 24px; }
+  .sub__visual { aspect-ratio: 16 / 10; }
   .sub__name { font-size: clamp(26px, 8vw, 34px); margin-bottom: 12px; }
   .sub__tag { font-size: 17px; margin-bottom: 18px; }
   .sub__body p { font-size: 15px; }
   .sub__meta { gap: 12px; font-size: 10px; margin-bottom: 14px; }
 
-  /* Stat card: stack 4 cells into a single column for readability */
+  /* Stat card: full-width container means 2×2 still reads cleanly — keep
+     the desktop arrangement instead of stacking into a tall single column. */
   .stat-card { padding: 18px 18px 0; }
-  .stat-card__grid { grid-template-columns: 1fr; grid-template-rows: repeat(4, 1fr); margin: 0 -18px; }
-  .stat-card__cell { padding: 12px 18px; flex-direction: row; align-items: baseline; justify-content: space-between; gap: 14px; }
-  .stat-card__val { font-size: 26px; }
-  .stat-card__lbl { margin-top: 0; max-width: 60%; text-align: right; }
+  .stat-card__grid { margin: 0 -18px; }
+  .stat-card__cell { padding: 14px 16px; }
+  .stat-card__val { font-size: clamp(22px, 6.5vw, 30px); }
+  .stat-card__lbl { font-size: 11px; margin-top: 10px; max-width: 100%; }
 
-  /* Quote card: shrink padding + quote size */
-  .quote-card { padding: 22px 20px 18px; }
-  .quote-card__hd { margin-bottom: 16px; padding-bottom: 12px; }
-  .quote-card__body { font-size: 17px; padding-left: 18px; }
+  /* Quote card: full-width frame, comfortable type. */
+  .quote-card { padding: 24px 22px 20px; }
+  .quote-card__hd { margin-bottom: 18px; padding-bottom: 12px; }
+  .quote-card__body { font-size: 18px; padding-left: 20px; }
   .quote-card__body::before { font-size: 2em; top: -10px; }
 
   .lead { gap: 22px; }
