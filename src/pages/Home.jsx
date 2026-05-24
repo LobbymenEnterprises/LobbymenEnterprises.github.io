@@ -7,6 +7,7 @@ import SiteFooter from "../components/SiteFooter.jsx";
 import { getDates } from "../lib/dates.js";
 import { smoothScrollToId } from "../lib/scroll.js";
 import { useDocumentTitle } from "../lib/useDocumentTitle.js";
+import { useLatestSha } from "../lib/useLatestSha.js";
 import tesalImg from "../assets/tesal-breadboard.jpg";
 
 // Press releases span the trailing ~7 months, so they roll across two calendar
@@ -78,6 +79,7 @@ const FIN_ROWS = [
 export default function Home() {
   const { year, fy, fyShort } = getDates();
   const press = makePress(year);
+  const sha = useLatestSha();
   const location = useLocation();
   useDocumentTitle(
     "Lobbymen Enterprises — A diversified Canadian holding company",
@@ -398,7 +400,7 @@ export default function Home() {
                   </div>
                 </dl>
                 <div className="bot-card__ft">
-                  <span>SHA</span> e9a4f01
+                  <span>SHA</span> {sha}
                 </div>
               </div>
             </div>
