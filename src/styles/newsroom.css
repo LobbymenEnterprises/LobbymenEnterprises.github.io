@@ -1,6 +1,8 @@
 /* ─────────────────────────────────────────────────────────────────────
-   Newsroom — quarterly results press release.
-   Tokens, reset, topbar, breadcrumb live in theme.css.
+   Newsroom — shared press-release chrome (.pr, .fineprint, .contacts,
+   .adjacency, .media) used by every release page. Page-specific variants
+   are scoped (e.g. .pr--statement, below). Tokens, reset, topbar and
+   breadcrumb live in theme.css.
    ───────────────────────────────────────────────────────────────────── */
 
 .wrap--narrow { max-width: 880px; }
@@ -268,4 +270,102 @@
   .pr__title { font-size: clamp(30px, 8vw, 44px); }
   .pr__stats .kpi__value { font-size: 30px; }
   .pr__stats { margin: 40px 0 48px; }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Statement variant (.pr--statement) — an obituary/condolence release.
+   Reuses the press-release chrome above; only the tone-setting bits differ:
+   a tighter title measure, an italic serif dek, a quieter (ink, not accent)
+   pull-quote rule, and a serif body for the fine print. The in-memoriam
+   panel is unique to this page.
+   ───────────────────────────────────────────────────────────────────── */
+.pr--statement .pr__title {
+  font-size: clamp(36px, 4.6vw, 60px);
+  line-height: 1.06;
+  max-width: 18ch;
+}
+.pr--statement .pr__dek {
+  font-style: italic;
+  max-width: 680px;
+}
+.pr--statement .pr__body blockquote { border-left-color: var(--ink-soft); }
+.pr--statement .fineprint p { font-family: var(--font-serif); font-size: 14px; }
+
+/* in-memoriam panel */
+.memoriam {
+  margin: 56px 0;
+  padding: 36px 36px 32px;
+  background: var(--bg-soft);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  max-width: 720px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 32px 44px;
+  align-items: start;
+}
+.memoriam__eyebrow {
+  font-family: var(--font-mono); font-size: 10.5px;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--ink-mute);
+  grid-column: 1 / -1;
+  margin: 0;
+}
+.memoriam__name {
+  font-family: var(--display);
+  font-weight: var(--display-weight);
+  letter-spacing: var(--display-tracking);
+  font-size: clamp(28px, 3.2vw, 40px);
+  line-height: 1.05;
+  margin: 0;
+}
+.memoriam__dl {
+  margin: 0; padding: 0;
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  row-gap: 8px;
+  column-gap: 18px;
+  font-size: 14px;
+}
+.memoriam__dl dt {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  padding-top: 3px;
+}
+.memoriam__dl dd {
+  margin: 0;
+  font-family: var(--font-serif);
+  color: var(--ink);
+  line-height: 1.45;
+}
+.memoriam__dl dd .mono {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+}
+.memoriam__epitaph {
+  grid-column: 1 / -1;
+  margin: 4px 0 0;
+  padding-top: 22px;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--ink-mute);
+}
+@media (max-width: 720px) {
+  .pr--statement .pr__title { max-width: none; }
+}
+@media (max-width: 640px) {
+  .memoriam { grid-template-columns: 1fr; gap: 24px; padding: 28px 24px 26px; }
+  .memoriam__dl { grid-template-columns: 90px 1fr; column-gap: 14px; }
+}
+@media (max-width: 600px) {
+  .pr--statement .pr__title { font-size: clamp(28px, 8vw, 40px); }
 }

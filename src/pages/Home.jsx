@@ -34,6 +34,7 @@ function makePress(year) {
       tag: "OFFICE OF THE CEO",
       title:
         "Statement from the Office of the Chief Executive on the Sudden Passing of Board Member Canoo",
+      to: "/newsroom/board-member-canoo-passing",
     },
     {
       date: `Mar 19, ${year}`,
@@ -508,14 +509,26 @@ export default function Home() {
               </div>
               <div className="press__more">Read &rarr;</div>
             </Link>
-            {press.map((p) => (
-              <div className="press__item" key={p.date + p.title}>
-                <div className="press__date">{p.date}</div>
-                <div className="press__tag">{p.tag}</div>
-                <div className="press__title">{p.title}</div>
-                <div className="press__more">Read &rarr;</div>
-              </div>
-            ))}
+            {press.map((p) => {
+              const inner = (
+                <>
+                  <div className="press__date">{p.date}</div>
+                  <div className="press__tag">{p.tag}</div>
+                  <div className="press__title">{p.title}</div>
+                  <div className="press__more">Read &rarr;</div>
+                </>
+              );
+              const key = p.date + p.title;
+              // Items with a `to` link to their full release; the rest are
+              // headlines without a landing page yet, shown as static rows.
+              return p.to ? (
+                <Link className="press__item" to={p.to} key={key}>
+                  {inner}
+                </Link>
+              ) : (
+                <div className="press__item" key={key}>{inner}</div>
+              );
+            })}
           </div>
         </div>
       </section>
