@@ -642,6 +642,14 @@ a.press__item { cursor: pointer; }
 
   .sub { padding: 36px 0; gap: 24px; }
   .sub__visual { aspect-ratio: 16 / 10; }
+
+  /* For the two non-photo subsidiaries, put the visual AFTER the copy on
+     mobile — the stat grid and editorial quote are supporting evidence,
+     not headline imagery. Tesal's photograph stays first because it IS
+     the headline. */
+  .sub__visual--stats,
+  .sub__visual--quote { order: 2; }
+
   .sub__name { font-size: clamp(26px, 8vw, 34px); margin-bottom: 12px; }
   .sub__tag { font-size: 17px; margin-bottom: 18px; }
   .sub__body p { font-size: 15px; }
@@ -676,7 +684,8 @@ a.press__item { cursor: pointer; }
   .chart__delta { font-size: 12px; }
 
   .fin__row { grid-template-columns: 1fr auto; padding: 12px 0; }
-  .fin__row .fin__chg { grid-column: 2; font-size: 11px; }
+  .fin__row .fin__num { text-align: right; min-width: 88px; }
+  .fin__row .fin__chg { grid-column: 2; font-size: 11px; text-align: right; min-width: 88px; }
 
   /* Press list — drop tag/more columns down to date + headline */
   .press__item { grid-template-columns: 1fr; gap: 4px; padding: 16px 0; }

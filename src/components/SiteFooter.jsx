@@ -67,11 +67,18 @@ export default function SiteFooter() {
         </div>
 
         <div className="foot__bottom">
-          <div>© 2009 — {year} Lobbymen Enterprises, Inc. &nbsp;·&nbsp; All rights reserved.</div>
+          <div className="foot__copy">
+            © 2009 — {year} Lobbymen Enterprises, Inc.
+            <span className="foot__sep"> &nbsp;·&nbsp; </span>
+            <span className="foot__rights">All rights reserved.</span>
+          </div>
           <div className="foot__legal">
-            <a href="#" onClick={noop}>Terms</a> &nbsp;·&nbsp;
-            <a href="#" onClick={noop}>Privacy</a> &nbsp;·&nbsp;
-            <a href="#" onClick={noop}>Accessibility</a> &nbsp;·&nbsp;
+            <a href="#" onClick={noop}>Terms</a>
+            <span className="foot__sep"> &nbsp;·&nbsp; </span>
+            <a href="#" onClick={noop}>Privacy</a>
+            <span className="foot__sep"> &nbsp;·&nbsp; </span>
+            <a href="#" onClick={noop}>Accessibility</a>
+            <span className="foot__sep"> &nbsp;·&nbsp; </span>
             <Link to="/whistleblower">Whistleblower</Link>
           </div>
         </div>

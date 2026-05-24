@@ -283,7 +283,14 @@ button { font: inherit; }
   .foot { padding: 40px 0 28px; }
   .foot__top { grid-template-columns: 1fr; gap: 28px; margin-bottom: 32px; }
   .foot__about { max-width: none; }
-  .foot__bottom { flex-direction: column; gap: 10px; align-items: flex-start; }
+  /* On mobile, hide the inline "·" separators and convert both lines to
+     flex-wrap layouts. This lets "All rights reserved" wrap onto a new line
+     without dragging an awkward middot with it, and lets the four legal links
+     wrap cleanly instead of overflowing horizontally. */
+  .foot__bottom { flex-direction: column; gap: 14px; align-items: flex-start; }
+  .foot__sep { display: none; }
+  .foot__copy { display: flex; flex-wrap: wrap; column-gap: 8px; row-gap: 4px; }
+  .foot__legal { display: flex; flex-wrap: wrap; column-gap: 18px; row-gap: 6px; }
 }
 
 /* honor reduced-motion: kill ticker scroll, pulse, color-mode transitions */
