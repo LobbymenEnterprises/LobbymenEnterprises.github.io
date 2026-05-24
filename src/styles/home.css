@@ -641,8 +641,13 @@ a.press__item { cursor: pointer; }
   .section__lede { font-size: 16px; }
 
   .sub { padding: 36px 0; gap: 24px; }
-  .sub__visual { aspect-ratio: 16 / 10; }
-
+  /* Photo keeps its 16/10 frame; stat & quote cards drop the fixed
+     aspect-ratio and size to content so nothing clips. */
+  .sub__visual--photo { aspect-ratio: 16 / 10; }
+  .sub__visual--stats,
+  .sub__visual--quote { aspect-ratio: auto; }
+  .sub__visual--stats .stat-card,
+  .sub__visual--quote .quote-card { position: static; inset: auto; }
   /* For the two non-photo subsidiaries, put the visual AFTER the copy on
      mobile — the stat grid and editorial quote are supporting evidence,
      not headline imagery. Tesal's photograph stays first because it IS
@@ -656,8 +661,10 @@ a.press__item { cursor: pointer; }
   .sub__meta { gap: 12px; font-size: 10px; margin-bottom: 14px; }
 
   /* Stat card: full-width container means 2×2 still reads cleanly — keep
-     the desktop arrangement instead of stacking into a tall single column. */
-  .stat-card { padding: 18px 18px 0; }
+     the desktop arrangement instead of stacking into a tall single column.
+     Add real bottom padding now that the card sizes to content (desktop
+     relied on absolute fill, so the grid ran to the frame edge). */
+  .stat-card { padding: 18px 18px 18px; }
   .stat-card__grid { margin: 0 -18px; }
   .stat-card__cell { padding: 14px 16px; }
   .stat-card__val { font-size: clamp(22px, 6.5vw, 30px); }
