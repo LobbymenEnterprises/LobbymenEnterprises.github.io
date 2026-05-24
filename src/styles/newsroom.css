@@ -255,22 +255,6 @@
 }
 @media (max-width: 720px) { .adjacency__list { grid-template-columns: 1fr; } }
 
-/* ─── simple inline footer (renamed from .foot to avoid clashing with the
-       home page's full footer grid) ─────────────────────────────────── */
-.sitefoot {
-  border-top: 1px solid var(--rule);
-  padding: 40px 0 28px;
-  background: var(--bg);
-}
-.sitefoot__inner {
-  display: flex; justify-content: space-between; align-items: baseline;
-  gap: 24px;
-  font-family: var(--font-mono); font-size: 11px;
-  letter-spacing: 0.06em; color: var(--ink-mute);
-  flex-wrap: wrap;
-}
-.sitefoot__inner a:hover, .sitefoot__inner .sitefoot__link:hover { color: var(--ink); }
-
 /* ─── responsive ────────────────────────────────────────────────── */
 @media (max-width: 720px) {
   .pr { padding: 48px 0 40px; }

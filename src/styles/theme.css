@@ -68,7 +68,6 @@ html {
 .is-mode-toggling .ticker,
 .is-mode-toggling .disclaimer,
 .is-mode-toggling .foot,
-.is-mode-toggling .sitefoot,
 .is-mode-toggling .section[style] {
   transition: background-color .25s ease, color .25s ease, border-color .25s ease;
 }
@@ -90,7 +89,7 @@ img, svg { display: block; max-width: 100%; }
 button { font: inherit; }
 
 /* link-styled buttons (in-page scroll actions) shed default button chrome */
-.brand--btn, .nav button, .crumb__link, .sitefoot__link, .linklike {
+.brand--btn, .nav button, .crumb__link, .linklike {
   appearance: none;
   background: none;
   border: 0;
@@ -227,6 +226,64 @@ button { font: inherit; }
 @media (max-width: 380px) {
   .brand span { display: none; }
   .topbar__cta { font-size: 10px; letter-spacing: 0.04em; }
+}
+
+/* ──────────────────────────────────────────────────────────  footer  ──
+   Shared site footer (SiteFooter component) used on every page. */
+.foot {
+  border-top: 1px solid var(--rule);
+  padding: 56px 0 36px;
+  background: var(--bg-soft);
+  margin-top: 24px;
+}
+.foot__top {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 48px;
+}
+.foot__mark { display: flex; align-items: center; gap: 12px; }
+.foot__mark .brand__mark { width: 26px; height: 26px; }
+.foot__mark span {
+  font-family: var(--display); font-weight: var(--display-weight);
+  letter-spacing: var(--display-tracking); font-size: 20px;
+}
+.foot__about {
+  font-size: 13.5px; color: var(--ink-soft); line-height: 1.6;
+  margin: 18px 0 0; max-width: 320px;
+}
+.foot__col h5 {
+  font-family: var(--font-mono); font-size: 10.5px;
+  font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-mute);
+  margin: 0 0 14px;
+}
+.foot__col ul {
+  margin: 0; padding: 0; list-style: none;
+  display: flex; flex-direction: column; gap: 8px;
+}
+.foot__col li a, .foot__col li button {
+  font-size: 13.5px; color: var(--ink-soft);
+  text-align: left;
+}
+.foot__col li a:hover, .foot__col li button:hover { color: var(--ink); }
+.foot__bottom {
+  border-top: 1px solid var(--rule-soft);
+  padding-top: 20px;
+  display: flex; justify-content: space-between; gap: 24px;
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.06em; color: var(--ink-mute);
+  flex-wrap: wrap;
+}
+.foot__legal a:hover { color: var(--ink); }
+@media (max-width: 880px) {
+  .foot__top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .foot { padding: 40px 0 28px; }
+  .foot__top { grid-template-columns: 1fr; gap: 28px; margin-bottom: 32px; }
+  .foot__about { max-width: none; }
+  .foot__bottom { flex-direction: column; gap: 10px; align-items: flex-start; }
 }
 
 /* honor reduced-motion: kill ticker scroll, pulse, color-mode transitions */

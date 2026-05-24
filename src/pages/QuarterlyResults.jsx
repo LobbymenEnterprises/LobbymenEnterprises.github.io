@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import Topbar from '../components/Topbar.jsx';
 import Breadcrumb from '../components/Breadcrumb.jsx';
-import PageFooter from '../components/PageFooter.jsx';
+import SiteFooter from '../components/SiteFooter.jsx';
 import { getDates } from '../lib/dates.js';
 import { useSectionNav } from '../lib/scroll.js';
 import { useDocumentTitle } from '../lib/useDocumentTitle.js';
@@ -203,13 +203,7 @@ export default function QuarterlyResults() {
         </div>
       </section>
 
-      <PageFooter
-        links={[
-          { label: 'Newsroom', section: 'newsroom' },
-          { label: 'Investors', section: 'investors' },
-          { label: 'Home', to: '/' },
-        ]}
-      />
+      <SiteFooter />
     </>
   );
 }

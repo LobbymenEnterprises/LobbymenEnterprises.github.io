@@ -8,6 +8,7 @@ import './styles/theme.css';
 import './styles/home.css';
 import './styles/newsroom.css';
 import './styles/statements.css';
+import './styles/whistleblower.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

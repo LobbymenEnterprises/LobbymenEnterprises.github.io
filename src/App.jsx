@@ -3,6 +3,7 @@ import ScrollManager from './components/ScrollManager.jsx';
 import Home from './pages/Home.jsx';
 import QuarterlyResults from './pages/QuarterlyResults.jsx';
 import FinancialStatements from './pages/FinancialStatements.jsx';
+import Whistleblower from './pages/Whistleblower.jsx';
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/newsroom/quarterly-results" element={<QuarterlyResults />} />
         <Route path="/newsroom/financial-statements" element={<FinancialStatements />} />
+        <Route path="/whistleblower" element={<Whistleblower />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>

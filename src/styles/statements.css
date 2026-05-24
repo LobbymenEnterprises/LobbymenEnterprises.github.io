@@ -1,6 +1,6 @@
 /* ─────────────────────────────────────────────────────────────────────
    Newsroom — condensed consolidated financial statements.
-   Tokens, reset, topbar, breadcrumb, simple footer (.sitefoot) are shared.
+   Tokens, reset, topbar, breadcrumb, and the site footer (.foot) are shared.
    This page uses a slightly narrower content measure than the rest of the
    site, so .wrap is overridden within the .fs-page scope.
    ───────────────────────────────────────────────────────────────────── */
@@ -313,7 +313,7 @@
 
 /* ─── print styles ───────────────────────────────────────────── */
 @media print {
-  .topbar, .crumb, .pg, .sitefoot { display: none; }
+  .topbar, .crumb, .pg, .foot { display: none; }
   body { background: white; color: black; font-size: 11px; }
   .fs-page .wrap { max-width: none; padding: 0 12mm; }
   .doc { padding: 8mm 0 0; }

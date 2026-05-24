@@ -574,57 +574,6 @@ a.press__item { cursor: pointer; }
   .lead__portrait { max-width: 220px; }
 }
 
-/* ──────────────────────────────────────────────────────────  footer  ── */
-.foot {
-  border-top: 1px solid var(--rule);
-  padding: 56px 0 36px;
-  background: var(--bg-soft);
-  margin-top: 24px;
-}
-.foot__top {
-  display: grid;
-  grid-template-columns: 1.4fr repeat(3, 1fr);
-  gap: 40px;
-  margin-bottom: 48px;
-}
-.foot__mark { display: flex; align-items: center; gap: 12px; }
-.foot__mark .brand__mark { width: 26px; height: 26px; }
-.foot__mark span {
-  font-family: var(--display); font-weight: var(--display-weight);
-  letter-spacing: var(--display-tracking); font-size: 20px;
-}
-.foot__about {
-  font-size: 13.5px; color: var(--ink-soft); line-height: 1.6;
-  margin: 18px 0 0; max-width: 320px;
-}
-.foot__col h5 {
-  font-family: var(--font-mono); font-size: 10.5px;
-  font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
-  color: var(--ink-mute);
-  margin: 0 0 14px;
-}
-.foot__col ul {
-  margin: 0; padding: 0; list-style: none;
-  display: flex; flex-direction: column; gap: 8px;
-}
-.foot__col li a, .foot__col li button {
-  font-size: 13.5px; color: var(--ink-soft);
-  text-align: left;
-}
-.foot__col li a:hover, .foot__col li button:hover { color: var(--ink); }
-.foot__bottom {
-  border-top: 1px solid var(--rule-soft);
-  padding-top: 20px;
-  display: flex; justify-content: space-between; gap: 24px;
-  font-family: var(--font-mono); font-size: 11px;
-  letter-spacing: 0.06em; color: var(--ink-mute);
-  flex-wrap: wrap;
-}
-.foot__legal a:hover { color: var(--ink); }
-@media (max-width: 880px) {
-  .foot__top { grid-template-columns: 1fr 1fr; }
-}
-
 /* ──────────────────────────────────────────  cite / disclaimer strip  ─ */
 .disclaimer {
   background: var(--bg-soft);
@@ -736,12 +685,6 @@ a.press__item { cursor: pointer; }
   /* Offices: single column with comfy spacing */
   .offices { grid-template-columns: 1fr; }
   .office { padding: 22px 18px; }
-
-  /* Footer stack */
-  .foot { padding: 40px 0 28px; }
-  .foot__top { grid-template-columns: 1fr; gap: 28px; margin-bottom: 32px; }
-  .foot__about { max-width: none; }
-  .foot__bottom { flex-direction: column; gap: 10px; align-items: flex-start; }
 
   .disclaimer { font-size: 10px; padding: 12px 0; line-height: 1.5; }
 }

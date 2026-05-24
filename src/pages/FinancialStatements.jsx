@@ -1,6 +1,6 @@
 import Topbar from '../components/Topbar.jsx';
 import Breadcrumb from '../components/Breadcrumb.jsx';
-import PageFooter from '../components/PageFooter.jsx';
+import SiteFooter from '../components/SiteFooter.jsx';
 import { getDates } from '../lib/dates.js';
 import { smoothScrollToId } from '../lib/scroll.js';
 import { useDocumentTitle } from '../lib/useDocumentTitle.js';
@@ -17,7 +17,8 @@ export default function FinancialStatements() {
   useDocumentTitle('Lobbymen Enterprises — Q1 Condensed Consolidated Financial Statements');
 
   return (
-    <div className="fs-page">
+    <>
+      <div className="fs-page">
       <Topbar />
       <Breadcrumb
         items={[
@@ -342,13 +343,8 @@ export default function FinancialStatements() {
         </div>
       </div>
 
-      <PageFooter
-        links={[
-          { label: '← Back to release', to: '/newsroom/quarterly-results' },
-          { label: 'Newsroom', section: 'newsroom' },
-          { label: 'Home', to: '/' },
-        ]}
-      />
-    </div>
+      </div>
+      <SiteFooter />
+    </>
   );
 }

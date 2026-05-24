@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useSectionNav } from '../lib/scroll.js';
 import { getDates } from '../lib/dates.js';
 
@@ -71,7 +72,7 @@ export default function SiteFooter() {
             <a href="#" onClick={noop}>Terms</a> &nbsp;·&nbsp;
             <a href="#" onClick={noop}>Privacy</a> &nbsp;·&nbsp;
             <a href="#" onClick={noop}>Accessibility</a> &nbsp;·&nbsp;
-            <a href="#" onClick={noop}>Whistleblower</a>
+            <Link to="/whistleblower">Whistleblower</Link>
           </div>
         </div>
       </div>
