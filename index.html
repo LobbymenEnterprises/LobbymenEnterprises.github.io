@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="Lobbymen Enterprises — a diversified Canadian holding company. Long-term owner-operator of three independent subsidiaries." />
+<title>Lobbymen Enterprises — A diversified Canadian holding company</title>
+
+<script>
+  // Resolve color mode before first paint to avoid a flash of the wrong theme.
+  // Mirrors the logic in src/context/ThemeContext.jsx.
+  (function () {
+    try {
+      var stored = localStorage.getItem('lbmn-mode');
+      var mode = (stored === 'light' || stored === 'dark')
+        ? stored
+        : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-mode', mode);
+    } catch (e) {
+      document.documentElement.setAttribute('data-mode', 'light');
+    }
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" />
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
